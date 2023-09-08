@@ -5,13 +5,12 @@
  * main Entry - point
  *
  * Description: 'This takes random numbers, give output'
- * @parameter: n 
  *
  * Return: Always 0 (Success)
  */
-/*outputs condition meeting the if_else*/
 int main(void)
 {
+/*This function, outputs the result of random numbers*/
 	int n;
 
 	srand(time(0));
