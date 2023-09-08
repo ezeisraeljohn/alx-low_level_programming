@@ -5,10 +5,11 @@
  * main Entry - point
  *
  * Description: 'This takes random numbers, give output'
- * @parameter: n for numbers to be assigned
+ * @parameter: n 
  *
  * Return: Always 0 (Success)
  */
+/*outputs condition meeting the if_else*/
 int main(void)
 {
 	int n;
