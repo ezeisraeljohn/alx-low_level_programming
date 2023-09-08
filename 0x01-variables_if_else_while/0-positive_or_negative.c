@@ -1,20 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
  * main Entry - point
  *
  * Description: 'This takes random numbers, give output'
  *
  * Return: Always 0 (Success)
- */
-
-/**
- *main-This outputs the result of n
- */
+ * */
 int main(void)
 {
-/*This function, outputs the result of random numbers*/
 	int n;
 
 	srand(time(0));
