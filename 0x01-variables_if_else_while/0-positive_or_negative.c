@@ -8,6 +8,10 @@
  *
  * Return: Always 0 (Success)
  */
+
+/**
+ *main-This outputs the result of n
+ */
 int main(void)
 {
 /*This function, outputs the result of random numbers*/
