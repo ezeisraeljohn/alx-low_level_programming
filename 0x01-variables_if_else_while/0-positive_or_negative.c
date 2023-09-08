@@ -1,14 +1,15 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+/*more headers goes there*/
+#include <stdio.h>
 
 /**
  * main Entry - point
  *
- * Description: 'This takes random numbers, give output'
+ * Description: This takes random numbers, give output
  *
  * Return: Always 0 (Success)
- * */
+ */
 int main(void)
 {
 	int n;
