@@ -14,9 +14,8 @@ int main(void)
 	{
 		if ((c == 'e') || (c == 'q'))
 			continue;
-		else	
+		else
 			putchar(c);
-		putchar('\n');
 	}
 	return (0);
 }
