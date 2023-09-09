@@ -1,9 +1,8 @@
 #include <stdio.h>
 /**
- * main - Prints out all digits of 
- * decimals 
+ * main - Prints integer with putchar
  *
- * Return: Always 0 (Success)
+ * Remain: Always 0 (Success)
  */
 int main(void)
 {
