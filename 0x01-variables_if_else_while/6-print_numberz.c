@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 /**
- * main - prints integer with putchar
+ * main - prints the output
  *
- * Remain: Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
