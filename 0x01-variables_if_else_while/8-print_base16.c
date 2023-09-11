@@ -9,7 +9,7 @@ int main(void)
 {
 	char i;
 
-	for(i = '0'; i <= 'f'; i++)
+	for (i = '0'; i <= 'f'; i++)
 	{
 		if (((i >= '0') && (i <= '9')) || ((i >= 'a') && (i <= 'f')))
 			putchar(i);
