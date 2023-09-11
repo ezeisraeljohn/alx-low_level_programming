@@ -11,7 +11,10 @@ int main(void)
 
 	for(i = '0'; i <= 'f'; i++)
 	{
-		putchar(i);
+		if (((i >= '0') && (i <= '9')) || ((i >= 'a') && (i <= 'f')))
+			putchar(i);
+		else
+			continue;
 	}
 	putchar('\n');
 	return (0);
