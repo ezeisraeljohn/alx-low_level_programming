@@ -1,24 +1,10 @@
-#include "main.h"
-
 /**
  * _abs - Prints the absolute value of a number
  * @a: value to be checked
  *
- * Return: b
+ * Return: the absolute value of a
  */
 int _abs(int a)
 {
-	int b;
-
-	if (a > 0)
-	{
-		b = -1 * a;
-		return (b);
-	}
-	else
-	{
-		b = a;
-		return (b);
-	}
+	return (a < 0 ? -a : a);
 }
-	
