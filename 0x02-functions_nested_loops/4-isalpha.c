@@ -4,7 +4,7 @@
  * _isalpha - checks for alphabets
  * @c: Operand
  *
- * Return b
+ * Return: b
  */
 int _isalpha(int c)
 {
