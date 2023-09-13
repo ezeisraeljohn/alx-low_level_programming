@@ -10,20 +10,10 @@
 int print_last_digit(int a)
 {
 	int b;
+	int c;
 
-	if (a >= 0)
-	{
-		b = a % 10;
-	}
-	else if (a = –2147483648)
-	{
-		b = 8;
-	}
-	else
-	{
-		a = -a;
-		b = a % 10;
-	}
+	c = a < 0 ? -a : a;
+	b = c % 10;
 	_putchar(b + '0');
 	return (b);
 }
