@@ -15,10 +15,14 @@ int print_last_digit(int a)
 	{
 		b = a % 10;
 	}
+	else if (a = –2147483648)
+	{
+		b = 8;
+	}
 	else
 	{
 		a = -a;
-		b = a % 10;	
+		b = a % 10;
 	}
 	_putchar(b + '0');
 	return (b);
