@@ -4,28 +4,28 @@
  * print_sign - checks for positive numbers
  * @n: operand
  *
- * Return: d
+ * Return: b
  */
 int print_sign(int n)
 {
-	int d;
+	int b;
 	
 	if (n > 0)
 	{
-		d = 1;
+		b = 1;
 		_putchar('+');
-		return (d);
+		return (b);
 	}
 	else if (n == 0)
 	{
-		d = 0;
+		b = 0;
 		_putchar('0');
-		return (d);
+		return (b);
 	}
 	else
 	{
-		d = -1;
+		b = -1;
 		_putchar('-');
-		return (d);
+		return (b);
 	}
 }
