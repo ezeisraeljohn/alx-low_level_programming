@@ -15,10 +15,7 @@ int print_last_digit(int a)
 	{
 		a = -a;
 		b = a % 10;
-	}
-	else if (a == INT_MAX)
-	{
-		b = 8;
+		b = -b;
 	}
 	else
 	{
