@@ -2,16 +2,17 @@
 
 /**
  * _islower - This function detects lower case key
+ * @c: operand for the function
  *
- * Return: b
+ * Return: 0 for lowercase and 1 for uppercase
  */
 int _islower(int c)
 {
 	char b;
 
-	if((c >= 'a') && (c <= 'z'))
-		b = 0;
-	else
+	if ((c >= 'a') && (c <= 'z'))
 		b = 1;
+	else
+		b = 0;
 	return b;
 }
