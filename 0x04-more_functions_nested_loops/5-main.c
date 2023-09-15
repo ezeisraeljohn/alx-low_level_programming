@@ -31,10 +31,6 @@ void more_numbers(void)
 				putchar((j / 10) + '0');
 				putchar((j % 10) + '0');
 			}
-			else
-			{
-				putchar(j + '0');
-			}
 		}
 		putchar('\n');
 	}
