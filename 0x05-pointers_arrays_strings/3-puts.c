@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * 3-puts: This prints out string to the
+ * _puts: This prints out string to the
  * standard output
  * @str: Operand to use
  *
