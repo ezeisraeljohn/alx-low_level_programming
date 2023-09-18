@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * _puts: This prints out string to the
- * standard output
+ * _puts: Prints to standard output.
  * @str: Operand to use
  *
  * Return: Nothing
