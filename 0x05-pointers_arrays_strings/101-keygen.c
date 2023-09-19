@@ -1,47 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <ctype.h>
+#include <string.h>
 
-#define PASSWORD_LENGTH 10
+#define PASSWORD_LENGTH 100
+#define CHECKSUM 2772
+
+
 
 /**
- * generate_password -  Generates a random password based on the provided character set.
- * @password: The buffer to store the generated password.
- * @length: The length of the password to be generated.
- *
- * Retrun: Nothing
+ * generatePassword - A function that generate a random password an place it
+ * inside an allucated variable named password
+ * @_sum: A pointer to a variable that keep tracks genretad password
+ * ascii value sum.
+ * Return: The allocated char* password
  */
-void generate_password(char *password, int length);
-
-int main();
-
-void generate_password(char *password, int length) {
-	const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	int charset_size = sizeof(charset) - 1;
+char *generatePassword(int *_sum)
+{
+	const char alphanum[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *password = malloc(PASSWORD_LENGTH + 1);
 	int i;
 
-	for (i = 0; i < length; i++) {
-		int index = rand() % charset_size;
-		password[i] = charset[index];
-	}
-
-	password[length] = '\0';
-}
-
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
-
-int main() {
-	char password[PASSWORD_LENGTH + 1];
 	srand(time(NULL));
-
-	generate_password(password, PASSWORD_LENGTH);
-
-	printf("Generated Password: %s\n", password);
-
-	return 0;
-}
-
+	for (i = 0; *_sum < CHECKSUM - (127); ++i) {
+		password[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
+		*_sum += (int) password[i];
+	}
