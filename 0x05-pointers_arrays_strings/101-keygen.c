@@ -27,3 +27,4 @@ char *generatePassword(int *_sum)
 		password[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
 		*_sum += (int) password[i];
 	}
+}
