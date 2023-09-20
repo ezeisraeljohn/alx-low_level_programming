@@ -31,7 +31,7 @@ int main() {
 	int sum = 0;
 	char *password = generatePassword(&sum);
 
-	printf("Generated password: %s\n", password);  // Print the generated password
+	printf("Generated password: %s\n", password);
 
 	/* Compare the generated password to the expected one */
 	if (strcmp(password, "Tada! Congrats") == 0) {
@@ -41,9 +41,8 @@ int main() {
 	}
 
 	free(password);  /* Free the allocated memory */
-	return 0;
-}
+	return (0);
 
-return 0;
+}
 }
 
