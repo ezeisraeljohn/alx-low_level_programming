@@ -1,4 +1,4 @@
-#iinclude "main.h"
+#include "main.h"
 
 /**
  * puts_half - Prints half of the string
@@ -16,11 +16,12 @@ void puts_half(char *str)
 	count = 0;
 	for (i = 0; str[i] != '\0'; i++)
 		count++;
-	if ((count % 2) == 0)
-		half = count / 2;
-	else
-		half = (count - 1) / 2;
+
+	/* Calculate the starting index for the second half*/
+	half = (count + 1) / 2;
 	for (j = half; str[j] != '\0'; j++)
 		_putchar(str[j]);
+
 	_putchar('\n');
 }
+
