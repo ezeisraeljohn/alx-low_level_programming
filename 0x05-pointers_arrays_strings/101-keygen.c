@@ -16,13 +16,13 @@ char *generatePassword(int *sum) {
 	}
 
 	srand(time(NULL));
-	int i;  // Move variable declaration here for older C standards
+	int i;  // Move variable declaration to the beginning of the block
 	for (i = 0; *sum < CHECKSUM; ++i) {
 		password[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
 		*sum += (int) password[i];
 	}
 
-	password[CHECKSUM] = '\0';  // Null-terminate the password
+	password[CHECKSUM] = '\0';  /* Null-terminate the password */
 	return password;
 }
 
@@ -30,7 +30,7 @@ int main() {
 	int sum = 0;
 	char *password = generatePassword(&sum);
 
-	// Add the rest of your main function logic here
+	// Use the password variable or remove the declaration if not needed
 
 	return 0;
 }
