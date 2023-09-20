@@ -31,14 +31,19 @@ int main() {
 	int sum = 0;
 	char *password = generatePassword(&sum);
 
-	/* Use the password variable or remove the declaration if not needed */
+	printf("Generated password: %s\n", password);  // Print the generated password
 
-	/* Ensure the variable is used to avoid the unused variable warning */
-	if (password) {
-		printf("Generated password: %s\n", password);
-		free(password);  /* Free the allocated memory */
+	/* Compare the generated password to the expected one */
+	if (strcmp(password, "Tada! Congrats") == 0) {
+		printf("Generated password matches the expected one.\n");
+	} else {
+		printf("Generated password does not match the expected one.\n");
 	}
 
+	free(password);  /* Free the allocated memory */
 	return 0;
+}
+
+return 0;
 }
 
