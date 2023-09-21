@@ -5,7 +5,7 @@
  * @s1: First string
  * @s2: Second string
  *
- * Return positive, negative or zero
+ * Return: positive, negative or zero
  */
 int _strcmp(char *s1, char *s2)
 {
