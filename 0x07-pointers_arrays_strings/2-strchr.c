@@ -11,7 +11,8 @@
  */
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
+	/* loops that checks for presence of character */
+	while (*s)
 	{
 		if (*s == c)
 			return (s);
