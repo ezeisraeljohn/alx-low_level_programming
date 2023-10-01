@@ -1,0 +1,35 @@
+#include <string.h>
+
+int palindrome_helper(char *s, int begin, int end);
+
+/**
+ * is_palindrome - checks if a string is palindrome or not
+ * @s: string
+ *
+ * Return: 1 if palindrome, 0 otherwise
+ */
+int is_palindrome(char *s)
+{
+	if (*s == '\0') /* empty strings are palindrome */
+		return (1);
+
+	return (palindrome_helper(s, 0, strlen(s) - 1));
+}
+
+/**
+ * palindrome_helper - A helper function to check if a string is palindrome
+ * @s: string
+ * @begin: character at the start index position
+ * @end: character at the end index position
+ *
+ * Return: 1 if palindrome, 0 otherwise
+ */
+int palindrome_helper(char *s, int begin, int end)
+{
+	if (s[begin] != s[end])
+		return (0);
+	if (begin >= end)
+		return (1);
+
+	return (palindrome_helper(s, begin + 1, end - 1));
+}
