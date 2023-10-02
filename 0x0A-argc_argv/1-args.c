@@ -9,8 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	(void)argv;
-	
+	(void)argv;/*unused variable*/
 	printf("%d\n", argc - 1);
 	return (0);
 }
