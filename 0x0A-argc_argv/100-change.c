@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 			min_coins += cents / coin[i];
 			cents %= coin[i];
 		}
-	}	
-	printf("%d\n", min_coins);
+		printf("%d\n", min_coins);
+	}
 	return (0);
 }
