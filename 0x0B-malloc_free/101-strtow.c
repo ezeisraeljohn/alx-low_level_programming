@@ -9,11 +9,11 @@ void free_str(char **str_array, int num_of_words);
 char *new_word(const char *str, int start, int end);
 
 /**
- *  * strtow - splits a string into words.
- *   * @str: The string to split
- *    *
- *     * Return: A pointer to an array of strings (words) on success, NULL otherwise.
- *      */
+ * strtow - splits a string into words.
+ * @str: The string to split
+ *
+ * Return: A pointer to an array of strings (words) on success, NULL otherwise.
+ */
 char **strtow(char *str)
 {
 	char **str_array;
@@ -56,13 +56,13 @@ char **strtow(char *str)
 }
 
 /**
- *  * new_word - gets a word a from string and writes it to a memory buffer
- *   * @str: string to copy from
- *    * @start: start index of the new word in the string
- *     * @end: end index of word
- *      *
- *       * Return: A pointer to the new word
- *        */
+ * new_word - gets a word a from string and writes it to a memory buffer
+ * @str: string to copy from
+ * @start: start index of the new word in the string
+ * @end: end index of word
+ *
+ * Return: A pointer to the new word
+ */
 char *new_word(const char *str, int start, int end)
 {
 	char *new_word;
@@ -79,11 +79,11 @@ char *new_word(const char *str, int start, int end)
 }
 
 /**
- *  * get_word_count - Returns the number of words in a string.
- *   * @str: String
- *    *
- *     * Return: Number of words
- *      */
+ * get_word_count - Returns the number of words in a string.
+ * @str: String
+ *
+ * Return: Number of words
+ */
 int get_word_count(const char *str)
 {
 	int in_word = 0; /* flag to track if we are in a word or not */
@@ -108,10 +108,10 @@ int get_word_count(const char *str)
 }
 
 /**
- *  * free_str - frees memory allocated for an array of strings
- *   * @str_array: string array
- *    * @num_of_words: number of words
- *     */
+ * free_str - frees memory allocated for an array of strings
+ * @str_array: string array
+ * @num_of_words: number of words
+ */
 void free_str(char **str_array, int num_of_words)
 {
 	int i = 0;
