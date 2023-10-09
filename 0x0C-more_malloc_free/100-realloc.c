@@ -13,7 +13,7 @@
 void *_memcpy(void *dest, void *src, unsigned int n)
 {
 	unsigned int i;
-	char * destination = dest;
+	char *destination = dest;
 	const char *source = src;
 
 	for (i = 0; i < n; i++)
