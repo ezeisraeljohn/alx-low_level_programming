@@ -1,10 +1,11 @@
 /**
- * int_index - searches for an integer value in an array of integers
+ * int_index - search for an integer value in an array of integers
  * @array: the array to search
  * @size: size of the array
  * @compare: the comparator function pointer
  *
- * Return: the index of the first element for which @comparator does not
+ * Return: The index of the first element for which
+ * cmp fnction does not return 0
  * return 0.
  */
 int int_index(int *array, int size, int (*compare)(int))
