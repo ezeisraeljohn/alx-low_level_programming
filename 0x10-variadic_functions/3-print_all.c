@@ -2,13 +2,14 @@
 #include <stdio.h>
 #include <string.h>
 
+int print_format(char n);
+
 /**
  * print_all - This function prints everything passed to it
  * @format: pointer to the print specifier
  *
  * Return: Nothing
  */
-int print_format(char n);
 void print_all(const char * const format, ...)
 {
 	int i, len_starter, int_num;
@@ -56,18 +57,15 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 }
-
 /**
- * print_format - adds comma and space before printing
- * next string or character etc
+ * print_format - checks for wanted character in the array
  * @n: character to check
  *
- * Return: 1 if true or 0 if false
- *
+ * Return: 1 for availabilty or 0 if not there
  */
 int print_format(char n)
 {
-	if (n == 'c' || n == 'f' || n == 's' || n == 'i')
+	if (n == 'i' || n == 'c' || n == 'f' || n == 's')
 		return (1);
 	else
 		return (0);
