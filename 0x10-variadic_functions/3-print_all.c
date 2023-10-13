@@ -13,7 +13,6 @@ int print_format(char n);
 void print_all(const char * const format, ...)
 {
 	int i, len_starter, int_num;
-	int check_for_print;
 	double f_num;
 	char cha;
 	char *cha_ptr;
@@ -25,7 +24,6 @@ void print_all(const char * const format, ...)
 
 	while (i < len_starter)
 	{
-		check_for_print = print_format(format[i]);
 		switch (format[i])
 		{
 		case 'c':
@@ -51,22 +49,12 @@ void print_all(const char * const format, ...)
 			printf("%s", cha_ptr);
 			break;
 		}
-		if ((i != len_starter - 1) && check_for_print)
+		if ((i != len_starter - 1) && (format[i] == 's'
+		|| format[i] == 'c' || format[i] == 'f' || format[i]
+		== 'i'))
 		printf(", ");
 		i++;
 	}
 	printf("\n");
 }
-/**
- * print_format - checks for wanted character in the array
- * @n: character to check
- *
- * Return: 1 for availabilty or 0 if not there
- */
-int print_format(char n)
-{
-	if (n == 'i' || n == 'c' || n == 'f' || n == 's')
-		return (1);
-	else
-		return (0);
-}
+
