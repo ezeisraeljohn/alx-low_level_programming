@@ -21,12 +21,6 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	len_starter = strlen(format);
 	i = 0;
-
-	if (format == NULL || format[0] == '\0')
-	{
-		printf("\n");
-		return;
-	}
 	while (i < len_starter)
 	{
 		switch (format[i])
