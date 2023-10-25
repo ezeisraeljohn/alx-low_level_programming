@@ -1,81 +1,107 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - prints a linked list and checks for a loop
- * @head: a pointer to the start of the list
+ * contains - Checks if a node is in the list of visited nodes.
+ * @list: The list
+ * @node: The node
  *
- * Return: the number of nodes in the list
+ * Return: zero
  */
-size_t print_listint_safe(const listint_t *head)
+int contains(listint_t *list, listint_t *node)
 {
-	size_t node_count, i;
-	/* an array of listint_t nodes */
-	const listint_t **visited_nodes = NULL;
-
-	if (head == NULL)
+	while (list)
 	{
-		return (0); /* the list is already empty */
+		if (list == node)
+			return (1);
+		list = list->next;
 	}
-
-	node_count = 0;
-	while (head != NULL)
-	{
-		for (i = 0; i < node_count; i++)
-		{
-			/**
-			 * check if the current node has been visited already
-			 * it could be a possible loop candidate
-			 */
-			if (head == visited_nodes[i])
-			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
-				free(visited_nodes);
-				return (node_count);
-			}
-		}
-
-		node_count++;
-
-		/* keeps track of the nodes visited so far */
-		visited_nodes = append_to_list(visited_nodes, node_count, head);
-
-		/* print current node's information */
-		printf("[%p] %d\n", (void *)head, head->n);
-
-		head = head->next;
-	}
-
-	free(visited_nodes);
-	return (node_count);
+	return (0);
 }
 
 /**
- * append_to_list - keeps track of all nodes visited in a linked list
- * @node_list: the old list to append to (contains the list of visited nodes)
- * @node_count: the number of nodes to append to the list
- * @new_node: the new node to append to the list
- *
- * Return: a pointer the new list of visited nodes
+ * add_to_visited - Adds a node to the list of visited nodes.
+ * @list: The list
+ * @node: The node
  */
-const listint_t **append_to_list(const listint_t **node_list,
-		size_t node_count, const listint_t *new_node)
+void add_to_visited(listint_t **list, listint_t *node)
 {
-	size_t i;
-	const listint_t **visited_nodes;
+	node->next = *list;
+	*list = node;
+}
 
-	visited_nodes = malloc(node_count * sizeof(listint_t *));
-	if (visited_nodes == NULL)
+/**
+ * handle_loop - Handles a loop if detected.
+ * @loop_start: start of the loop
+ * @h: pointer to the head
+ */
+void handle_loop(listint_t *loop_start, listint_t **h)
+{
+	listint_t *last;
+	(void)h;
+
+	last = loop_start;
+
+	while (last->next != loop_start)
 	{
-		exit(98); /* memory allocation failed */
+		last = last->next;
+	}
+	last->next = NULL;
+}
+
+/**
+ * free_listint_safe - Safely frees a linked list with potential loops.
+ * @h: Pointer to the first node in the linked list.
+ *
+ * Return: Number of elements in the freed list.
+ */
+size_t free_listint_safe(listint_t **h)
+{
+	size_t len = 0;
+	listint_t *current = *h;
+	listint_t *temp;
+	listint_t *visited_nodes = NULL;
+
+	while (current)
+	{
+		/* Check if the current node has been visited before*/
+		if (contains(visited_nodes, current))
+		{
+			/* Handle the loop or break if needed*/
+			handle_loop(current, h);
+			break;
+		}
+
+		/* Mark the current node as visited*/
+		add_to_visited(&visited_nodes, current);
+
+		temp = current;
+		current = current->next;
+
+		len++;
+		free(temp);
 	}
 
-	/* append the nodes to the list */
-	for (i = 0; i < node_count - 1; i++)
-	{
-		visited_nodes[i] = node_list[i];
-	}
-	visited_nodes[i] = new_node; /* append the new node to the list */
+	return (len);
+}
 
-	free(node_list); /* free the previous memory */
-	return (visited_nodes);
+/**
+ * print_listint_safe - Prints the linked list safely.
+ * @head: Pointer to the first node in the linked list (const).
+ *
+ * Return: Number of elements in the list.
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t len = 0;
+	const listint_t *current = head;
+
+	while (current)
+	{
+		printf("%d\n", current->n);
+		len++;
+
+		current = current->next;
+	}
+
+	return (len);
 }
