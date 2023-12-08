@@ -14,7 +14,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	nth_node = head;
 
-	/* get the length of the string */
+	/* get the length of the list */
 	while (nth_node != NULL)
 	{
 		count++;
