@@ -1,5 +1,5 @@
 # Low-Level Programming ALX Sprint 1
-![ALX Logo](alx-low_level_programming/AlSVG.svg)
+![ALX Logo](alx-low_level_programming/AlxSVG.svg/)
 This repository contains all the codes written in C during the Alx Software Engineering Programme
 ## Contents:
 0x00-hello_world, 
