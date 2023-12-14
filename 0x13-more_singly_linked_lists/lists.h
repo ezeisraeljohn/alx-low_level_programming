@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#define safer_free(p) _free((void **) &(p))
 /**
  * struct listint_s - singly linked list
  * @n: integer
