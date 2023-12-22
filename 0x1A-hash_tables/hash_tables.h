@@ -1,6 +1,10 @@
 #ifndef HASH_TABLES_H
 #define HASH_TABLES_H
 
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+
 /*Structures*/
 
 
